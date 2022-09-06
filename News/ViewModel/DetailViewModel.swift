@@ -8,22 +8,19 @@
 import Foundation
 
 class DetailViewModel {
-	
-	private let feed:Feed
-	var loadWebView:Observable<URLRequest>?
-	
-	
-	init(_feed:Feed) {
-		self.feed = _feed
-		guard let url = URL(string: feed.url)  else { return }
-		self.loadWebView = Observable(URLRequest(url: url))
-		//self.loadView()
-	}
-	
-	func loadwebView() {
-	 	guard let url = URL(string: feed.url)  else { return }
-			 let request = URLRequest(url: url)
-		self.loadWebView?.value = request
-	}
-	
+
+    private let feed: Feed
+    var loadWebView: Observable<URLRequest>?
+
+    init(newsFeed: Feed) {
+        self.feed = newsFeed
+        guard let url = URL(string: feed.url)  else { return }
+        self.loadWebView = Observable(URLRequest(url: url))
+    }
+
+    func loadwebView() {
+        guard let url = URL(string: feed.url)  else { return }
+        let request = URLRequest(url: url)
+        self.loadWebView?.value = request
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FeedResponse:Decodable {
-	let copyright:String
-	let results:[Feed]
+struct FeedResponse: Decodable {
+    let copyright: String
+    let results: [Feed]
 }

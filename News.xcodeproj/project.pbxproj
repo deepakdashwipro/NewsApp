@@ -33,6 +33,7 @@
 		5780FEFB276E4303007EB727 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5780FEFA276E4302007EB727 /* DetailViewModel.swift */; };
 		5780FF09276E687D007EB727 /* DetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5780FF08276E687D007EB727 /* DetailViewModelTest.swift */; };
 		B41F23FA28B9F3E10015CF47 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F23F928B9F3E10015CF47 /* DetailViewControllerTest.swift */; };
+		B47E1D4528C1F46C008D78E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E1D4428C1F46C008D78E5 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		5780FEFA276E4302007EB727 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		5780FF08276E687D007EB727 /* DetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTest.swift; sourceTree = "<group>"; };
 		B41F23F928B9F3E10015CF47 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
+		B47E1D4428C1F46C008D78E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				5780FEDD276DD42D007EB727 /* Observable.swift */,
+				B47E1D4428C1F46C008D78E5 /* Constants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				57634DE9276D197500523B95 /* Sources */,
 				57634DEA276D197500523B95 /* Frameworks */,
 				57634DEB276D197500523B95 /* Resources */,
+				B47E1D4328C1CC92008D78E5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -371,6 +375,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B47E1D4328C1CC92008D78E5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"/usr/local/bin:$PATH\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		57634DE9276D197500523B95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -387,6 +411,7 @@
 				57634DF1276D197500523B95 /* AppDelegate.swift in Sources */,
 				5780FEFB276E4303007EB727 /* DetailViewModel.swift in Sources */,
 				5780FEB6276DA7D2007EB727 /* FeedResponse.swift in Sources */,
+				B47E1D4528C1F46C008D78E5 /* Constants.swift in Sources */,
 				57634DF3276D197500523B95 /* SceneDelegate.swift in Sources */,
 				5780FEDE276DD42D007EB727 /* Observable.swift in Sources */,
 			);

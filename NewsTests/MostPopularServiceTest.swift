@@ -9,8 +9,8 @@ import XCTest
 @testable import News
 class MostPopularServiceTest: XCTestCase {
 
-	var service:MostPopularService? = MostPopularService()
-	
+	var service: MostPopularService? = MostPopularService()
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -19,13 +19,13 @@ class MostPopularServiceTest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
 			service = nil
     }
-	
+
 	/// Testing service function of mostpoular feed
 	func testMostPopularService() {
 		let expection  = XCTestExpectation()
-		
-		service?.fetchMostPopular(days:.oneday) { (result) in
-			switch result{
+
+		service?.fetchMostPopular(days: .oneday) { (result) in
+			switch result {
 			case .success(let response) : print(response)
 				XCTAssertNotNil(response)
 			case.failure(let error) : print(error)
@@ -35,5 +35,4 @@ class MostPopularServiceTest: XCTestCase {
 		}
 		wait(for: [expection], timeout: 30)
 	}
-
 }

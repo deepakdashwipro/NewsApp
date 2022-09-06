@@ -23,19 +23,20 @@ class DetailViewControllerTest: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         // Any test you write for XCTest can be annotated as throws and async.
         // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with
+        //assertions afterwards.
     }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }
-    func testDetailViewController()  {
-        let data = try! NSKeyedArchiver.archivedData(withRootObject: viewmodel as Any, requiringSecureCoding: false)
-               let coder = try! NSKeyedUnarchiver(forReadingFrom: data)
-                   let sut = DetailViewController(coder: coder)
+    func testDetailViewController() {
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: viewmodel as Any, requiringSecureCoding: false)
+        let coder = try? NSKeyedUnarchiver(forReadingFrom: data ?? Data())
+        let sut = DetailViewController(coder: coder ?? NSCoder())
                    XCTAssertNotNil(sut)
         XCTAssertNotNil(viewmodel.viewWillAppear(_:))
         XCTAssertNotNil(viewmodel.setobserver())

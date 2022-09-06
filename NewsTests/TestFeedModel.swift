@@ -18,20 +18,18 @@ class TestFeedModel: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+	func testFeedModel() {
 
-	func testFeedModel()  {
-	
 		guard let data = sampleRes.data(using: .utf8) else { return  }
 		do {
 			let feed = try JSONDecoder().decode(Feed.self, from: data )
 			XCTAssertEqual(feed.url, "https://www.nytimes.com/2021/12/14/well/live/chin-hairs-women.html")
 			XCTAssertEqual(feed.media.count, 1)
 			XCTAssertEqual(feed.media.first?.mediametadata?.count, 3)
-		}catch let error {
+		} catch let error {
 			print(error)
 		}
 	}
-
 }
 
 let sampleRes = """
@@ -61,13 +59,13 @@ let sampleRes = """
 					"Polycystic Ovary Syndrome"
 			 ],
 			 "org_facet":[
-					
+
 			 ],
 			 "per_facet":[
-					
+
 			 ],
 			 "geo_facet":[
-					
+
 			 ],
 			 "media":[
 					{
@@ -78,19 +76,22 @@ let sampleRes = """
 						 "approved_for_syndication":1,
 						 "media-metadata":[
 								{
-									 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-thumbStandard.jpg",
+									 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-thumbStandard.jpg",
 									 "format":"Standard Thumbnail",
 									 "height":75,
 									 "width":75
 								},
 								{
-									 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo210.jpg",
+									 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo210.jpg",
 									 "format":"mediumThreeByTwo210",
 									 "height":140,
 									 "width":210
 								},
 								{
-									 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo440.jpg",
+									 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo440.jpg",
 									 "format":"mediumThreeByTwo440",
 									 "height":293,
 									 "width":440
@@ -101,5 +102,3 @@ let sampleRes = """
 			 "eta_id":0
 		}
 """
-
-

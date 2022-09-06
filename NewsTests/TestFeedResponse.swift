@@ -18,17 +18,15 @@ class TestFeedResponse: XCTestCase {
     }
 
 	func testFeedRes() {
-		
 		guard let data = sampleRes.data(using: .utf8) else { return  }
 		do {
 			let feed = try JSONDecoder().decode(FeedResponse.self, from: data )
 			//XCTAssertEqual(feed.status, 1)
 			XCTAssertEqual(feed.results.count, 1)
-		}catch let error {
+		} catch let error {
 			print(error)
 		}
 	}
-
 }
 
 let response = """
@@ -63,13 +61,13 @@ let response = """
 						"Polycystic Ovary Syndrome"
 				 ],
 				 "org_facet":[
-						
+
 				 ],
 				 "per_facet":[
-						
+
 				 ],
 				 "geo_facet":[
-						
+
 				 ],
 				 "media":[
 						{
@@ -80,19 +78,22 @@ let response = """
 							 "approved_for_syndication":1,
 							 "media-metadata":[
 									{
-										 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-thumbStandard.jpg",
+										 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-thumbStandard.jpg",
 										 "format":"Standard Thumbnail",
 										 "height":75,
 										 "width":75
 									},
 									{
-										 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo210.jpg",
+										 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo210.jpg",
 										 "format":"mediumThreeByTwo210",
 										 "height":140,
 										 "width":210
 									},
 									{
-										 "url":"https://static01.nyt.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo440.jpg",
+										 "url":"https://static01.nyt
+.com/images/2021/12/14/well/14askwell-chin-hairs1/14askwell-chin-hairs1-mediumThreeByTwo440.jpg",
 										 "format":"mediumThreeByTwo440",
 										 "height":293,
 										 "width":440
