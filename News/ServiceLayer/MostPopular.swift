@@ -28,7 +28,7 @@ struct MostPopularService: MostPopularServiceProtocol {
 
     func fetchMostPopular(days: DaysFeed = .oneday, completion: @escaping (Result<FeedResponse, CustomError>) -> Void) {
         let path = NewsApiConstants.mostViewedurl+(days.rawValue)+NewsApiConstants.ext
-        WebserviceManager().requestGetApi(urlString: path, forImages: false) { (data, error) in
+        WebserviceManager().requestGetApi(urlString: path) { (data, error) in
             if error != nil {
                 completion(.failure(.apiFailedError(error?.localizedDescription ?? ErrorConstants.apiFailed+path)))
             } else {

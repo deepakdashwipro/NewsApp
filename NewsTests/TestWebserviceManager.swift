@@ -24,7 +24,7 @@ class TestWebserviceManager: XCTestCase {
 	func testWebservicecall() {
 
 		let expectation = XCTestExpectation(description: "waiting for response")
-        WebserviceManager().requestGetApi(urlString: urlstr, forImages: false) { (data, error) in
+        WebserviceManager().requestGetApi(urlString: urlstr) { (data, error) in
 		  XCTAssertNil(error)
 			XCTAssertNotNil(data)
 			expectation.fulfill()

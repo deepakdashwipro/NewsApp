@@ -34,6 +34,7 @@
 		5780FF09276E687D007EB727 /* DetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5780FF08276E687D007EB727 /* DetailViewModelTest.swift */; };
 		B41F23FA28B9F3E10015CF47 /* DetailViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41F23F928B9F3E10015CF47 /* DetailViewControllerTest.swift */; };
 		B47E1D4528C1F46C008D78E5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E1D4428C1F46C008D78E5 /* Constants.swift */; };
+		B4DE1F8C28D21042000435BD /* BasicAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DE1F8B28D21042000435BD /* BasicAuthDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		5780FF08276E687D007EB727 /* DetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTest.swift; sourceTree = "<group>"; };
 		B41F23F928B9F3E10015CF47 /* DetailViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTest.swift; sourceTree = "<group>"; };
 		B47E1D4428C1F46C008D78E5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4DE1F8B28D21042000435BD /* BasicAuthDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuthDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				5780FE95276D1E30007EB727 /* WebserviceManager.swift */,
+				B4DE1F8B28D21042000435BD /* BasicAuthDelegate.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -391,7 +394,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"/usr/local/bin:$PATH\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -404,6 +407,7 @@
 				57634DF5276D197500523B95 /* NewsListViewController.swift in Sources */,
 				5780FED8276DD102007EB727 /* NewsListViewModel.swift in Sources */,
 				5780FEF6276E3D11007EB727 /* DetailViewController.swift in Sources */,
+				B4DE1F8C28D21042000435BD /* BasicAuthDelegate.swift in Sources */,
 				5780FECB276DC585007EB727 /* MostPopular.swift in Sources */,
 				5780FEF1276DFF7D007EB727 /* Extension_UiImageView.swift in Sources */,
 				5780FEA3276D276E007EB727 /* NewsTableViewCell.swift in Sources */,
