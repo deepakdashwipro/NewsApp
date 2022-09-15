@@ -29,6 +29,6 @@ class TestWebserviceManager: XCTestCase {
 			XCTAssertNotNil(data)
 			expectation.fulfill()
 		}
-		wait(for: [expectation], timeout: 10)
+		wait(for: [expectation], timeout: 30)
 	}
 }

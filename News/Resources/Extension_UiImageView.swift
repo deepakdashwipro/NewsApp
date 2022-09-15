@@ -19,7 +19,7 @@ extension UIImageView {
     ///  - Parameter urlString: Pass Image URL as string which you image you want to down load
     func loadImageUsingCache(withUrl urlString: String) {
         self.image = nil
-        self.image = UIImage(systemName: "cloud.sun.rain.fill")
+        self.image = UIImage(systemName: ImageNameConstants.placeholderImg)
 
         /// checking for image already available in cache
         if let cachedImage = imageCache.object(forKey: urlString as NSString) as? UIImage {

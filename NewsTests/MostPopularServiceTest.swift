@@ -35,4 +35,24 @@ class MostPopularServiceTest: XCTestCase {
 		}
 		wait(for: [expection], timeout: 30)
 	}
+
+    /// Asynchronous test: success fast, failure slow
+    /// This is an example of a performance test case for calling MostViewed API
+    func testSuccessfullGetArticleFromNYTimes() {
+        MostPopularService().fetchMostPopular(days: .oneday) { (result) in
+            guard case .success(let response) = result else {
+                   return XCTFail("Expected to be a failure with error \(result)")
+               }
+            XCTAssertNotNil(response)
+        }
+    }
+
+    func testFailableGetArticleFromNYTimes() {
+        MostPopularService().fetchMostPopular(days: .thirtyday) { (result) in
+            guard case .failure(let error) = result else {
+                   return XCTFail("Expected to be a failure with error \(result)")
+               }
+            XCTAssertNotNil(error)
+        }
+    }
 }

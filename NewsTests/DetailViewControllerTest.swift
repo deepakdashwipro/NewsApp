@@ -8,7 +8,25 @@
 import XCTest
 @testable import News
 class DetailViewControllerTest: XCTestCase {
-    var viewmodel = DetailViewController()
+  //  var viewmodel = DetailViewController()
+    var sessionUnderTest: URLSession!
+    var controllerUnderTest: DetailViewController!
+
+    override func setUp() {
+        super.setUp()
+        sessionUnderTest = URLSession(configuration: URLSessionConfiguration.default)
+        if let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:
+                                                    "DetailViewController") as? DetailViewController {
+            controllerUnderTest = viewController
+            _ = controllerUnderTest.view
+        }
+    }
+
+    override func tearDown() {
+        sessionUnderTest = nil
+        controllerUnderTest = nil
+        super.tearDown()
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -27,19 +45,12 @@ class DetailViewControllerTest: XCTestCase {
         //assertions afterwards.
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure() {
-            // Put the code you want to measure the time of here.
-        }
-    }
     func testDetailViewController() {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: viewmodel as Any, requiringSecureCoding: false)
+        let data = try? NSKeyedArchiver.archivedData(withRootObject: controllerUnderTest as Any,
+                                                     requiringSecureCoding: false)
         let coder = try? NSKeyedUnarchiver(forReadingFrom: data ?? Data())
         let sut = DetailViewController(coder: coder ?? NSCoder())
                    XCTAssertNotNil(sut)
-        XCTAssertNotNil(viewmodel.viewWillAppear(_:))
-        XCTAssertNotNil(viewmodel.setobserver())
-        XCTAssertNotNil(viewmodel.webView(_:didReceive:completionHandler:))
+        XCTAssertNotNil(controllerUnderTest.webView(_:didReceive:completionHandler:))
     }
 }
